@@ -15,22 +15,21 @@ const scrollTo = (id) => {
 // Externe Kauf-URL (Digistore24)
 const purchaseUrl = 'https://www.checkout-ds24.com/product/639553';
 
-// Medien-Dateien aus storage (Pfad: storage/app/public/uploads) -> via Symlink erreichbar unter /storage/uploads/*
-// Stelle sicher, dass 'php artisan storage:link' ausgeführt wurde.
+// Medien-Dateien aus public/uploads (direkt im Git committed)
 const media = {
-    cover: '/storage/uploads/cover.jpg',
-    athlete: '/storage/uploads/athlete.png',
-    logo: '/storage/uploads/logo.png',
+    cover: '/uploads/cover.jpg',
+    athlete: '/uploads/athlete.png',
+    logo: '/uploads/logo.png',
     videos: [
-        '/storage/uploads/1005(1).mp4',
-        '/storage/uploads/1005(2).mp4',
-        '/storage/uploads/1005(3).mp4',
+        '/uploads/1005(1).mp4',
+        '/uploads/1005(2).mp4',
+        '/uploads/1005(3).mp4',
     ],
     meals: [
-        '/storage/uploads/essen1.png',
-        '/storage/uploads/essen2.png',
-        '/storage/uploads/essen3.png',
-        '/storage/uploads/essen4.png',
+        '/uploads/essen1.png',
+        '/uploads/essen2.png',
+        '/uploads/essen3.png',
+        '/uploads/essen4.png',
     ],
 };
 
@@ -110,7 +109,7 @@ onUnmounted(() => observer.value?.disconnect());
                     </p>
                                 <div class="mt-6 sm:mt-8 flex flex-col gap-3">
                                     <a :href="purchaseUrl" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center justify-center px-6 sm:px-8 py-4 sm:py-5 rounded-full bg-gg-green text-white text-base sm:text-lg font-semibold shadow-lg shadow-gg-green/30 hover:bg-gg-dark transition-all active:scale-95">
-                                        👉 Jetzt starten für nur 19,90 €
+                                        👉 Jetzt starten für nur 20,00 €
                                     </a>
                                 </div>
                     <div class="mt-6 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm font-medium text-gg-dark/80">
@@ -292,7 +291,7 @@ onUnmounted(() => observer.value?.disconnect());
         <section id="angebot" class="py-12 sm:py-16 md:py-28 bg-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6" data-fade>
                 <div class="rounded-2xl sm:rounded-3xl border border-gg-green/30 bg-gradient-to-br from-white via-gg-green/5 to-gg-yellow/10 p-6 sm:p-10 text-center shadow-xl shadow-gg-green/10">
-                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gg-dark mb-3 sm:mb-4">Einmalig 19,90 € – kein Abo</h2>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gg-dark mb-3 sm:mb-4">Einmalig 20,00 € – kein Abo</h2>
                     <p class="text-sm sm:text-base text-gg-text/80 max-w-2xl mx-auto mb-6 leading-relaxed">Du erhältst das komplette E-Book direkt nach Zahlung als Download per E-Mail. 14 Tage Geld-zurück-Garantie über Digistore24.</p>
                                 <a :href="purchaseUrl" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-gg-green text-white font-semibold hover:bg-gg-dark transition text-base sm:text-lg shadow-lg shadow-gg-green/30 active:scale-95">
                                     💚 Jetzt E-Book kaufen
