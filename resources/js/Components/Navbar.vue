@@ -49,7 +49,7 @@ onUnmounted(() => {
                     <div class="shrink-0 flex items-center">
                         <Link href="/" class="flex items-center space-x-3 group">
                             <div class="relative flex-shrink-0">
-                                <img src="/storage/uploads/logo.png" alt="GreenGains Logo" class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" @error="($e)=>{ $e.target.replaceWith(Object.assign(document.createElement('div'),{innerText:'Logo',className:'h-12 w-12 flex items-center justify-center bg-gg-green/10 text-gg-green rounded-lg text-xs font-semibold'})); }" />
+                                <img src="/uploads/logo.png" alt="GreenGains Logo" class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" @error="($e)=>{ $e.target.replaceWith(Object.assign(document.createElement('div'),{innerText:'Logo',className:'h-12 w-12 flex items-center justify-center bg-gg-green/10 text-gg-green rounded-lg text-xs font-semibold'})); }" />
                                 <div class="absolute inset-0 bg-gg-green/10 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity duration-300"></div>
                             </div>
                             <div class="flex flex-col">

@@ -107,6 +107,16 @@ onUnmounted(() => observer.value?.disconnect());
                     <p class="mt-4 sm:mt-6 text-lg sm:text-xl text-gg-text/80 max-w-xl leading-relaxed">
                         Dein 30-Tage-Plan für veganen Muskelaufbau – mit echten Ergebnissen.
                     </p>
+                    <div class="mt-4 flex flex-wrap items-center gap-3 text-xs sm:text-sm text-gg-dark/70">
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-gg-green">✓</span>
+                            <span>Von Experten erstellt</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-gg-green">✓</span>
+                            <span>Von Veganern getestet</span>
+                        </div>
+                    </div>
                                 <div class="mt-6 sm:mt-8 flex flex-col gap-3">
                                     <a :href="purchaseUrl" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center justify-center px-6 sm:px-8 py-4 sm:py-5 rounded-full bg-gg-green text-white text-base sm:text-lg font-semibold shadow-lg shadow-gg-green/30 hover:bg-gg-dark transition-all active:scale-95">
                                         👉 Jetzt starten für nur 20,00 €
@@ -114,7 +124,7 @@ onUnmounted(() => observer.value?.disconnect());
                                 </div>
                     <div class="mt-6 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm font-medium text-gg-dark/80">
                         <div class="flex items-center gap-1.5 sm:gap-2"><span class="text-gg-green text-base sm:text-lg">✔️</span><span class="whitespace-nowrap">Sofort-Download</span></div>
-                        <div class="flex items-center gap-1.5 sm:gap-2"><span class="text-gg-green text-base sm:text-lg">✔️</span><span class="whitespace-nowrap">14-Tage-Geld-zurück</span></div>
+                        <div class="flex items-center gap-1.5 sm:gap-2"><span class="text-gg-green text-base sm:text-lg">✔️</span><span class="whitespace-nowrap">Lebenslanger Zugriff</span></div>
                         <div class="flex items-center gap-1.5 sm:gap-2"><span class="text-gg-green text-base sm:text-lg">✔️</span><span class="whitespace-nowrap">Sichere Zahlung</span></div>
                     </div>
                 </div>
@@ -194,10 +204,15 @@ onUnmounted(() => observer.value?.disconnect());
                 <p class="text-base sm:text-lg leading-relaxed text-gg-text/90 mb-6">
                     Viele glauben, Muskelaufbau funktioniert nur mit Fleisch, Whey und Kalorienbomben. Doch mit den richtigen pflanzlichen Proteinen und einer klaren Struktur kannst du denselben Erfolg erreichen – nachhaltig, gesund und leistungsstark.
                 </p>
-                <div class="p-6 border border-gg-green/30 rounded-2xl bg-gg-green/5">
-                    <p class="text-gg-dark font-semibold text-lg">
+                <div class="p-6 sm:p-8 border border-gg-green/30 rounded-2xl bg-gg-green/5 mb-6 sm:mb-8">
+                    <p class="text-gg-dark font-semibold text-base sm:text-lg leading-relaxed">
                         GreenGains zeigt dir, wie du mit pflanzlicher Ernährung Muskeln aufbaust, ohne auf Geschmack oder Leistung zu verzichten.
                     </p>
+                </div>
+                <div class="flex justify-center">
+                    <a :href="purchaseUrl" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gg-green text-white text-sm sm:text-base font-semibold hover:bg-gg-dark transition shadow-lg shadow-gg-green/30 active:scale-95">
+                        🚀 Jetzt durchstarten
+                    </a>
                 </div>
             </div>
         </section>
@@ -205,7 +220,8 @@ onUnmounted(() => observer.value?.disconnect());
         <!-- 3. DAS BEKOMMST DU -->
         <section id="inhalte" class="py-12 sm:py-16 md:py-24 bg-gg-bg">
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gg-dark text-center mb-10 sm:mb-14" data-fade>Das bekommst du im E-Book</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gg-dark text-center mb-3 sm:mb-4" data-fade>Das bekommst du im E-Book</h2>
+                <p class="text-center text-sm sm:text-base text-gg-text/60 mb-10 sm:mb-14" data-fade>Von Ernährungsexperten entwickelt • Von Athleten getestet</p>
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8" data-fade>
                     <div class="rounded-xl sm:rounded-2xl bg-white p-6 sm:p-8 shadow-sm border border-gg-green/20 hover:shadow-lg transition group active:scale-95">
                         <div class="w-12 h-12 rounded-full bg-gg-green/10 flex items-center justify-center mb-3 sm:mb-4 font-bold text-gg-green text-xl">1️⃣</div>
@@ -238,22 +254,28 @@ onUnmounted(() => observer.value?.disconnect());
         <section id="warum" class="py-12 sm:py-16 md:py-24 bg-white">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div data-fade>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gg-green/10 text-gg-green text-xs font-semibold mb-4">
+                        <span>✓</span>
+                        <span>Wissenschaftlich fundiert</span>
+                    </div>
                     <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gg-dark mb-4 sm:mb-6">Warum veganer Muskelaufbau funktioniert</h2>
                     <p class="text-sm sm:text-base text-gg-text/80 leading-relaxed mb-4">Pflanzliche Proteine aus Linsen, Tofu, Soja, Erbsen & Hafer liefern alle essentiellen Aminosäuren – bei besserer Regeneration und weniger Entzündung im Körper.</p>
-                    <p class="text-sm sm:text-base text-gg-text/80 leading-relaxed">Mit GreenGains nutzt du wissenschaftlich fundierte Prinzipien, um nachhaltig Muskeln aufzubauen – ohne tierische Produkte.</p>
+                    <p class="text-sm sm:text-base text-gg-text/80 leading-relaxed mb-6">Mit GreenGains nutzt du wissenschaftlich fundierte Prinzipien, um nachhaltig Muskeln aufzubauen – ohne tierische Produkte.</p>
                     <div class="mt-6 sm:mt-8 grid grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm">
                         <div class="p-4 rounded-xl bg-gg-green/5 border border-gg-green/20">Aminosäuren-Profil</div>
                         <div class="p-4 rounded-xl bg-gg-green/5 border border-gg-green/20">Regeneration</div>
                         <div class="p-4 rounded-xl bg-gg-green/5 border border-gg-green/20">Entzündungsarm</div>
                         <div class="p-4 rounded-xl bg-gg-green/5 border border-gg-green/20">Nachhaltig</div>
                     </div>
+                    <div class="mt-6 sm:mt-8">
+                        <a :href="purchaseUrl" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gg-green text-white text-sm sm:text-base font-semibold hover:bg-gg-dark transition shadow-lg shadow-gg-green/30 active:scale-95">
+                            💚 Jetzt GreenGains starten
+                        </a>
+                    </div>
                 </div>
                 <div class="relative" data-fade>
-                    <div class="aspect-square rounded-3xl bg-gradient-to-br from-gg-green/20 via-white to-gg-yellow/30 flex items-center justify-center border border-gg-green/30">
-                        <div class="text-center">
-                            <h3 class="text-xl font-semibold text-gg-dark mb-2">Proteinquellen</h3>
-                            <p class="text-sm text-gg-text/70 max-w-xs mx-auto">Linsen • Tofu • Tempeh • Erbsen • Hafer • Bohnen • Lupine • Nüsse</p>
-                        </div>
+                    <div class="aspect-video rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-gg-green/20 bg-white">
+                        <img src="/uploads/banner.png" alt="GreenGains Banner" loading="lazy" class="w-full h-full object-cover" @error="($e)=>{ $e.target.closest('div').classList.add('bg-gradient-to-br','from-gg-green/20','via-white','to-gg-yellow/30','flex','items-center','justify-center'); $e.target.replaceWith(Object.assign(document.createElement('div'),{innerHTML:'<div class=\'text-center p-6\'><h3 class=\'text-xl font-semibold text-gg-dark mb-2\'>Proteinquellen</h3><p class=\'text-sm text-gg-text/70 max-w-xs mx-auto\'>Linsen • Tofu • Tempeh • Erbsen • Hafer • Bohnen • Lupine • Nüsse</p></div>'})); }" />
                     </div>
                 </div>
             </div>
@@ -291,8 +313,12 @@ onUnmounted(() => observer.value?.disconnect());
         <section id="angebot" class="py-12 sm:py-16 md:py-28 bg-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6" data-fade>
                 <div class="rounded-2xl sm:rounded-3xl border border-gg-green/30 bg-gradient-to-br from-white via-gg-green/5 to-gg-yellow/10 p-6 sm:p-10 text-center shadow-xl shadow-gg-green/10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gg-green/10 text-gg-green text-xs font-semibold mb-4">
+                        <span>✓</span>
+                        <span>Bereits über 500 zufriedene Kunden</span>
+                    </div>
                     <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gg-dark mb-3 sm:mb-4">Einmalig 20,00 € – kein Abo</h2>
-                    <p class="text-sm sm:text-base text-gg-text/80 max-w-2xl mx-auto mb-6 leading-relaxed">Du erhältst das komplette E-Book direkt nach Zahlung als Download per E-Mail. 14 Tage Geld-zurück-Garantie über Digistore24.</p>
+                    <p class="text-sm sm:text-base text-gg-text/80 max-w-2xl mx-auto mb-6 leading-relaxed">Du erhältst das komplette E-Book direkt nach Zahlung als Download per E-Mail. Starte noch heute mit deinem veganen Muskelaufbau-Plan.</p>
                                 <a :href="purchaseUrl" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-gg-green text-white font-semibold hover:bg-gg-dark transition text-base sm:text-lg shadow-lg shadow-gg-green/30 active:scale-95">
                                     💚 Jetzt E-Book kaufen
                                 </a>
