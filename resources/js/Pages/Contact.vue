@@ -84,7 +84,7 @@ const submitForm = async () => {
                                 </div>
                                 <div class="ml-3">
                                     <p class="text-sm font-medium text-gray-900">E-Mail</p>
-                                    <p class="text-sm text-gray-500">info@ihrunternehmen.de</p>
+                                    <p class="text-sm text-gray-500"><a href="mailto:greengains@outlook.de" class="text-indigo-600 hover:underline">greengains@outlook.de</a></p>
                                 </div>
                             </div>
 

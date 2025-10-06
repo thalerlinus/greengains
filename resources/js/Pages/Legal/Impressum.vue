@@ -20,8 +20,8 @@ import MainLayout from '@/Layouts/MainLayout.vue';
         <p>
           <strong>Kontakt</strong><br />
           E-Mail:
-          <a href="mailto:thaler.linus@outlook.de"
-            >thaler.linus@outlook.de</a
+          <a href="mailto:greengains@outlook.de"
+            >greengains@outlook.de</a
           ><br />
           
         </p>

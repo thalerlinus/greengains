@@ -87,6 +87,15 @@ onMounted(() => {
     setTimeout(() => {
         document.querySelectorAll('[data-fade]').forEach(el => el.removeAttribute('data-fade'));
     }, 1500);
+
+    // Falls Seite mit Hash direkt aufgerufen wurde (z.B. /#angebot) -> nach Mount smooth scrollen
+    if (window.location.hash) {
+        const targetId = window.location.hash.substring(1);
+        setTimeout(() => {
+            const el = document.getElementById(targetId);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 80);
+    }
 });
 onUnmounted(() => observer.value?.disconnect());
 </script>

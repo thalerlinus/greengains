@@ -49,8 +49,7 @@ const currentYear = new Date().getFullYear();
                 <p class="text-xs text-white/60">© {{ currentYear }} GreenGains – powered by ThalerDigital</p>
                 <div class="flex flex-wrap gap-4 text-[11px] text-white/50">
                     <span>Sichere Zahlung (Digistore24)</span>
-                    <span>14 Tage Geld-zurück</span>
-                    <span>Support: thaler.linus@outlook.de</span>
+                    <span>Support: <a href="mailto:greengains@outlook.de" class="underline hover:text-white">greengains@outlook.de</a></span>
                 </div>
             </div>
         </div>

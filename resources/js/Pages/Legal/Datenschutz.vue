@@ -9,7 +9,7 @@ import MainLayout from '@/Layouts/MainLayout.vue';
       <div class="prose prose-sm max-w-none text-gg-dark prose-headings:text-gg-dark prose-a:text-gg-green space-y-4">
         <p>Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Erklärung informiert Sie über Art, Umfang und Zweck der Verarbeitung personenbezogener Daten auf dieser Website.</p>
         <h2>1. Verantwortlicher</h2>
-  <p>Linus Thaler, Innsbrucker Straße 37, 86163 Augsburg, Deutschland<br>E-Mail: <a href="mailto:thaler.linus@outlook.de">thaler.linus@outlook.de</a></p>
+  <p>Linus Thaler, Innsbrucker Straße 37, 86163 Augsburg, Deutschland<br>E-Mail: <a href="mailto:greengains@outlook.de">greengains@outlook.de</a></p>
         <h2>2. Erhobene Daten</h2>
         <p>Server-Logfiles (IP-Adresse, Datum/Uhrzeit, aufgerufene Seite, User-Agent), freiwillige Angaben bei Kontaktaufnahme, evtl. Zahlungs- und Bestelldaten über Digistore24.</p>
         <h2>3. Zweck der Verarbeitung</h2>
@@ -25,7 +25,7 @@ import MainLayout from '@/Layouts/MainLayout.vue';
         <h2>8. Sicherheit</h2>
         <p>SSL/TLS-Verschlüsselung, rollenbasierte Zugriffe, minimale Datenspeicherung.</p>
         <h2>9. Kontakt</h2>
-  <p>Bei Fragen wenden Sie sich an: <a href="mailto:thaler.linus@outlook.de">thaler.linus@outlook.de</a></p>
+  <p>Bei Fragen wenden Sie sich an: <a href="mailto:greengains@outlook.de">greengains@outlook.de</a></p>
         <p class="text-xs text-gray-500">Platzhalter – bitte rechtlich final prüfen/anpassen (Cookies, Tracking etc. ergänzen falls genutzt).</p>
       </div>
     </div>

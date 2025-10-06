@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
-import { Link } from '@inertiajs/vue3';
+import { Link, router, usePage } from '@inertiajs/vue3';
 import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
@@ -8,16 +8,35 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 const showingNavigationDropdown = ref(false);
 const isScrolled = ref(false);
 
+// Scroll zu einem Abschnitt (nur wenn aktuelle Seite die Startseite ist)
 const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-        element.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
+    const el = document.getElementById(sectionId);
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    showingNavigationDropdown.value = false;
+};
+
+// Intelligente Navigation: Wenn nicht auf der Startseite -> per Inertia zur Startseite navigieren und danach scrollen
+const goTo = (sectionId) => {
+    const pathIsHome = window.location.pathname === '/';
+    // Hero ist ganz oben – Sonderfall: wir lassen den Hash weg, damit kein störender Offset entsteht
+    const hash = sectionId && sectionId !== 'hero' ? `#${sectionId}` : '';
+
+    if (pathIsHome) {
+        // Bereits auf der Startseite -> direkt scrollen
+        scrollToSection(sectionId);
+    } else {
+        // Via Inertia zur Startseite und danach smooth scrollen
+        router.visit('/' + hash, {
+            replace: false,
+            preserveState: false,
+            onSuccess: () => {
+                // Kleines Delay, bis DOM der Startseite gemountet ist
+                setTimeout(() => scrollToSection(sectionId), 60);
+            },
         });
     }
-    // Close mobile menu after navigation
-    showingNavigationDropdown.value = false;
 };
 
 // Handle scroll effect for navbar
@@ -61,13 +80,13 @@ onUnmounted(() => {
 
                     <!-- Navigation Links -->
                     <div class="hidden space-x-1 lg:ml-12 lg:flex">
-                        <button @click="scrollToSection('hero')" class="nav-btn">Start</button>
-                        <button @click="scrollToSection('problem')" class="nav-btn">Problem</button>
-                        <button @click="scrollToSection('inhalte')" class="nav-btn">Inhalte</button>
-                        <button @click="scrollToSection('warum')" class="nav-btn">Warum</button>
-                        <button @click="scrollToSection('stimmen')" class="nav-btn">Stimmen</button>
-                        <button @click="scrollToSection('angebot')" class="nav-btn">Angebot</button>
-                        <button @click="scrollToSection('faq')" class="nav-btn-emph">Jetzt starten</button>
+                        <button @click="goTo('hero')" class="nav-btn">Start</button>
+                        <button @click="goTo('problem')" class="nav-btn">Problem</button>
+                        <button @click="goTo('inhalte')" class="nav-btn">Inhalte</button>
+                        <button @click="goTo('warum')" class="nav-btn">Warum</button>
+                        <button @click="goTo('stimmen')" class="nav-btn">Stimmen</button>
+                        <button @click="goTo('angebot')" class="nav-btn">Angebot</button>
+                        <button @click="goTo('faq')" class="nav-btn-emph">Jetzt starten</button>
                     </div>
                 </div>
 
@@ -159,14 +178,14 @@ onUnmounted(() => {
             class="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border-b border-gray-200/50 shadow-lg transition-all duration-300 ease-in-out"
         >
             <div class="px-4 py-6 grid gap-2">
-                <button @click="scrollToSection('hero')" class="w-full text-left px-4 py-3 text-base font-medium rounded-lg text-gg-dark/80 hover:text-gg-dark hover:bg-gg-green/10 transition">Start</button>
-                <button @click="scrollToSection('problem')" class="w-full text-left px-4 py-3 text-base font-medium rounded-lg text-gg-dark/80 hover:text-gg-dark hover:bg-gg-green/10 transition">Problem</button>
-                <button @click="scrollToSection('inhalte')" class="w-full text-left px-4 py-3 text-base font-medium rounded-lg text-gg-dark/80 hover:text-gg-dark hover:bg-gg-green/10 transition">Inhalte</button>
-                <button @click="scrollToSection('warum')" class="w-full text-left px-4 py-3 text-base font-medium rounded-lg text-gg-dark/80 hover:text-gg-dark hover:bg-gg-green/10 transition">Warum</button>
-                <button @click="scrollToSection('stimmen')" class="w-full text-left px-4 py-3 text-base font-medium rounded-lg text-gg-dark/80 hover:text-gg-dark hover:bg-gg-green/10 transition">Stimmen</button>
-                <button @click="scrollToSection('angebot')" class="w-full text-left px-4 py-3 text-base font-medium rounded-lg text-gg-dark/80 hover:text-gg-dark hover:bg-gg-green/10 transition">Angebot</button>
-                <button @click="scrollToSection('faq')" class="w-full text-left px-4 py-3 text-base font-medium rounded-lg text-gg-dark/80 hover:text-gg-dark hover:bg-gg-green/10 transition">FAQ</button>
-                <button @click="scrollToSection('angebot')" class="mt-2 w-full text-center px-4 py-3 text-sm font-semibold rounded-full text-white bg-gg-green hover:bg-gg-dark transition shadow shadow-gg-green/30">Jetzt starten</button>
+                <button @click="goTo('hero')" class="w-full text-left px-4 py-3 text-base font-medium rounded-lg text-gg-dark/80 hover:text-gg-dark hover:bg-gg-green/10 transition">Start</button>
+                <button @click="goTo('problem')" class="w-full text-left px-4 py-3 text-base font-medium rounded-lg text-gg-dark/80 hover:text-gg-dark hover:bg-gg-green/10 transition">Problem</button>
+                <button @click="goTo('inhalte')" class="w-full text-left px-4 py-3 text-base font-medium rounded-lg text-gg-dark/80 hover:text-gg-dark hover:bg-gg-green/10 transition">Inhalte</button>
+                <button @click="goTo('warum')" class="w-full text-left px-4 py-3 text-base font-medium rounded-lg text-gg-dark/80 hover:text-gg-dark hover:bg-gg-green/10 transition">Warum</button>
+                <button @click="goTo('stimmen')" class="w-full text-left px-4 py-3 text-base font-medium rounded-lg text-gg-dark/80 hover:text-gg-dark hover:bg-gg-green/10 transition">Stimmen</button>
+                <button @click="goTo('angebot')" class="w-full text-left px-4 py-3 text-base font-medium rounded-lg text-gg-dark/80 hover:text-gg-dark hover:bg-gg-green/10 transition">Angebot</button>
+                <button @click="goTo('faq')" class="w-full text-left px-4 py-3 text-base font-medium rounded-lg text-gg-dark/80 hover:text-gg-dark hover:bg-gg-green/10 transition">FAQ</button>
+                <button @click="goTo('angebot')" class="mt-2 w-full text-center px-4 py-3 text-sm font-semibold rounded-full text-white bg-gg-green hover:bg-gg-dark transition shadow shadow-gg-green/30">Jetzt starten</button>
             </div>
             <div v-if="$page.props.auth.user" class="px-4 py-4 border-t border-gray-200/50">
                 <div class="flex items-center space-x-3 px-4 py-3 bg-gray-50 rounded-lg mb-3">
